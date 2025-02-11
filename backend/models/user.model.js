@@ -20,4 +20,4 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // export the model so that it can be used in other files
-export default Entity;
+export default User;

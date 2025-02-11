@@ -7,6 +7,8 @@ import path from "path";
 
 // import the named connectDB function from the config folder
 import { connectDB } from "./config/db.js";
+// import the user routes from the routes folder
+import userRoutes from "./routes/user.route.js";
 // import the entity routes from the routes folder
 import entityRoutes from "./routes/entity.route.js";
 

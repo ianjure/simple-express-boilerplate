@@ -2,7 +2,7 @@
 import express from "express";
 
 // import the controllers from the controller folder
-import { loginUser, createUser } from "../controllers/user.controller.js";
+import { loginUser, createUser, loginPage, registerPage } from "../controllers/user.controller.js";
 
 // create a new router
 const router = express.Router();
