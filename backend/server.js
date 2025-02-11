@@ -24,13 +24,19 @@ const __dirname = path.resolve();
 
 //use EJS as the view engine
 app.set("view engine", "ejs");
+// set the views directory
+app.set("views", path.join(__dirname, "frontend", "views"));
 
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, "frontend", "public")));
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
 // allows us to accept JSON data in the body of the request (req.body)
 app.use(express.json());
 // use the entity routes with the /api/entity prefix
 app.use("/api/entity", entityRoutes);
 // use the user routes with the /api/entity prefix
-app.use("/api/user", userRoutes);
+app.use("/", userRoutes);
 
 // code snippet for production deployment
 if(process.env.NODE_ENV === "production") {

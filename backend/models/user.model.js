@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 // create a schema for the users
 const userSchema = mongoose.Schema({
-    name: {
+    username: {
         type: String,
         required: true
     },

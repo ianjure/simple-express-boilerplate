@@ -6,21 +6,21 @@ import bcrypt from "bcrypt";
 // import the User model from the models folder
 import User from "../models/user.model.js";
 
-// Route: GET /api/user/ - Show the Login Page
+// Route: GET / - Show the Login Page
 export const loginPage = (req, res) => {
     res.render("login");
 };
 
-// Route: GET /api/user/register - Show the Register Page
+// Route: GET /register - Show the Register Page
 export const registerPage = (req, res) => {
     res.render("register");
 };
 
-// Route: POST /api/user/register - Register the User
+// Route: POST /register - Register the User
 export const createUser = async (req, res) => {
     // req.body is the data that is sent with the POST request by the user
     const user = req.body;
-
+    console.log(user);
     // check if any of the fields are missing
     if(!user.username || !user.password) {
         return res.status(400).json({ success: false, message: "Please provide all fields." });
@@ -54,7 +54,7 @@ export const createUser = async (req, res) => {
     }
 };
 
-// Route: POST /api/user/login - Login the User
+// Route: POST /login - Login the User
 export const loginUser = async (req, res) => {
     // req.body is the data that is sent with the POST request by the user
     const user = req.body;
